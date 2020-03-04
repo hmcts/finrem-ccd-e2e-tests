@@ -1,10 +1,8 @@
 # Financial Remedy CCD End2End Journey Tests
 
-
 ## Purpose
 
 This service is to help people to run End2End Journey Tests for Financial Remedy.
-
 
 ## Getting Started
 
@@ -19,13 +17,19 @@ Running the application requires the following tools to be installed in your env
 
 Install dependencies by executing the following command:
 
- ```bash
+ ```
 $ yarn install
  ```
 
-### Running the tests
+### Running the End To End tests for Consented & Contested Journeys
 
- ```bash
+ ```
 $ yarn consentedtest-e2e
 $ yarn contestedtest-e2e
  ```
+
+## Verification
+
+### Eslint is included and will verify the config is properly formatted:
+
+`$ yarn lint`
