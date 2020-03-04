@@ -1,15 +1,14 @@
 {
-  "name": "finrem",
-  "version": "0.0.0",
+  "name": "finrem-e2e-tests",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "consentedtest-e2e": "JOURNEYTYPE=consented JOURNEY=all NODE_PATH=. codeceptjs  run  -c test/end2end/codecept.e2e.test.conf.js  --steps --reporter mocha-multi",
+    "consentedtest-e2e": "JOURNEYTYPE=consented JOURNEY=all NODE_PATH=. codeceptjs run  -c test/end2end/codecept.e2e.test.conf.js --steps --reporter mocha-multi",
     "contestedtest-e2e": "JOURNEYTYPE=contested JOURNEY=all NODE_PATH=. codeceptjs run  -c test/end2end/codecept.e2e.test.conf.js --steps --reporter mocha-multi",
-      
-    "Testtest": "NODE_PATH=. codeceptjs run  -c test/end2end/codecept.test.conf.js --steps --reporter mochawesome",
-    "eslint": "cross-env NODE_PATH=. eslint .",
-    "lint": "eslint .",
-    "Apitest": "APITEST=yes ./node_modules/mocha/bin/mocha --timeout 0  test/end2end/dataSetup/tests/**Tests.js --reporter mochawesome --reporter-options reportDir=functional-output,reportFilename=apiTestReportMochaAwesome"
+
+    "test": "NODE_PATH=. codeceptjs run  -c test/end2end/codecept.test.conf.js --steps --reporter mochawesome",
+    "lint": "eslint --fix .",
+    "Apitest": "APITEST=yes ./node_modules/mocha/bin/mocha --timeout 0 test/end2end/dataSetup/tests/**Tests.js --reporter mochawesome --reporter-options reportDir=functional-output,reportFilename=apiTestReportMochaAwesome"
   },
   "dependencies": {
     "axios-cookiejar-support": "^0.5.0",
@@ -33,3 +32,4 @@
     "webdriverio": "^5.11.13"
   }
 }
+
