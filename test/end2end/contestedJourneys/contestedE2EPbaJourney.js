@@ -53,6 +53,7 @@ Scenario('Verify Contested PBA Court Admin update case Scenario', async (I, Tabs
 
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
+  I.wait(2);
   I.searchCase(scenarioSolRef, searchCaseType);
   if (pbaValue === true) {
     I.contestedNextStep('Case Submission|PBA');
@@ -64,12 +65,13 @@ Scenario('Verify Contested PBA Court Admin update case Scenario', async (I, Tabs
 });
 
 
-Scenario('Verify Contested PBA Court judge application for Scheduling and Listing case', async (I, TabsPage) => {
+Scenario('Verify Contested PBA Court judge application for Scheduling and Listing case @testone', async (I, TabsPage) => {
 
   const scenarioSolRef = 'AUTO-' + dateUtil.createSolicitorReference();
   await getContestedScenarioState('Gate Keeping & Allocation', scenarioSolRef);
 
   I.signinIdam(testConfig.TestJudgeUserName, testConfig.TestJudgePassword);
+  I.wait(2);
   I.searchCase(scenarioSolRef, searchCaseType);
   I.contestedNextStep('Give Allocation Directions');
   await TabsPage.validateTabs(journeyType);
@@ -83,6 +85,7 @@ Scenario('Verify Contested PBA Court Admin Scheduling and Hearing Scenario', asy
   await getContestedScenarioState('Scheduling and Hearing', scenarioSolRef);
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
+  I.wait(2);
   I.searchCase(scenarioSolRef, searchCaseType);
 
   const isFastTrack = await I.grabTextFrom('#tabFastTrackDecision');
@@ -100,6 +103,7 @@ Scenario('Verify Contested PBA Solicitors upload case files Scenario', async (I,
   await getContestedScenarioState('Prepare for Hearing', scenarioSolRef);
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
+  I.wait(2);
   I.searchCase(scenarioSolRef, searchCaseType);
   I.contestedNextStep('Upload Case Files');
   I.contestedNextStep('Submit Uploaded Case Files');
@@ -116,6 +120,7 @@ Scenario('Verify Contested Universal events', async (I, TabsPage) => {
 
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
+  I.wait(2);
   I.searchCase(scenarioSolRef, searchCaseType);
   I.contestedAmendCase();
   I.waitForPage('.tabs-list');

@@ -48,8 +48,7 @@ Scenario('Verify Consented HWF Court Admin update case Scenario', async(I, TabsP
   await getConsentedScenarioState('Awaiting HWF Decision', scenarioSolref);
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-
-
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.addNote();
   // I.wait(10);
@@ -71,7 +70,7 @@ Scenario('Verify Consented Manual Payment', async (I, TabsPage) => {
   await getConsentedScenarioState('Application Drafted', scenarioSolref);
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Manual Payment');
   I.waitForPage('.EventLogTable h2', 'History');
@@ -88,8 +87,7 @@ Scenario('Verify Consented HWF Court judge application not approved case', async
   await getConsentedScenarioState('Awaiting Judicial Response', scenarioSolref);
 
   I.signinIdam(testConfig.TestJudgeUserName, testConfig.TestJudgePassword);
-
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Application Not Approved');
   // I.applicationNotApproved();
@@ -108,7 +106,7 @@ Scenario('Verify Consented HWF Court Send Order (Consent order Not Approved)', a
 
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Send Order');
   I.waitForPage('.EventLogTable h2', 'History');
@@ -125,7 +123,7 @@ Scenario('Verify Consented HWF Court Send Order (Consent order Approved)', async
 
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Send Order');
   I.waitForPage('.EventLogTable h2', 'History');
@@ -143,8 +141,7 @@ Scenario('Verify Consented HWF Solicitors Respond to order Scenario ', async (I,
 
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
-
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Respond To Order');
   I.waitForPage('.EventLogTable h2', 'History');
@@ -162,8 +159,7 @@ Scenario('Verify Consented HWF Court Admin Assign to Judge Scenario for Response
 
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Assign To Judge');
 
@@ -182,7 +178,7 @@ Scenario('Verify Consented HWF Court judge approve case', async (I, TabsPage)  =
 
 
   I.signinIdam(testConfig.TestJudgeUserName, testConfig.TestJudgePassword);
-
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Approve Application');
   I.waitForPage('.EventLogTable h2', 'History');

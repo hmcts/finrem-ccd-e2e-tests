@@ -16,6 +16,7 @@ Scenario('Verify Contested HWF E2E Path ', async (I) => {
   await getContestedScenarioState('Application Drafted', scenarioSolref);
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
+  I.wait(2);
   await I.searchCase(scenarioSolref, searchCaseType);
   await I.contestedNextStep('Case Submission|HWF');
 
@@ -58,6 +59,7 @@ Scenario('Verify Contested PBA E2E Path', async (I) => {
   await getContestedScenarioState('Application Drafted', scenarioSolref);
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
+  I.wait(2);
   await I.searchCase(scenarioSolref, searchCaseType);
   await I.contestedNextStep('Case Submission|PBA');
 

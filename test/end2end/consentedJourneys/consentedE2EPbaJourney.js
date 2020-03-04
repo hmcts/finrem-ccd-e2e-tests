@@ -46,7 +46,7 @@ Scenario('Verify Consented PBA Court Admin update case Scenario ', async (I, Tab
 
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   if(pbaValue===true) {
     I.pbaUpdateCase();
@@ -67,7 +67,7 @@ Scenario('Verify Consented PBA Court judge application not approved case', async
 
 
   I.signinIdam(testConfig.TestJudgeUserName, testConfig.TestJudgePassword);
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Application Not Approved');
   I.waitForPage('.EventLogTable h2', 'History');
@@ -84,7 +84,7 @@ Scenario('Verify Consented PBA Court Admin upload order Scenario', async (I, Tab
   await getConsentedScenarioState('Consent Order Not Approved', scenarioSolref);
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   // I.updateOrder();
   I.consentedNextStep('Upload Order');
@@ -110,7 +110,7 @@ Scenario('Verify Consented PBA Solicitors Respond to order Scenario ', async (I,
 
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Respond To Order');
   I.waitForPage('.EventLogTable h2', 'History');
@@ -129,7 +129,7 @@ Scenario('Verify Consented PBA Court Admin Assign to Judge Scenario for Response
 
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Assign To Judge');
   I.waitForPage('.EventLogTable h2', 'History');
@@ -147,7 +147,7 @@ Scenario('Verify Consented PBA Court judge approve case', async (I, TabsPage)  =
 
 
   I.signinIdam(testConfig.TestJudgeUserName, testConfig.TestJudgePassword);
-  // I.wait(10);
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Approve Application');
   I.waitForPage('.EventLogTable h2', 'History');

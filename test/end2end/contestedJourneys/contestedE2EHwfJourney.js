@@ -48,6 +48,7 @@ Scenario('Verify Contested, Judge Give Allocation Directions', async (I, TabsPag
   await getContestedScenarioState('Gate Keeping & Allocation', scenarioSolRef);
 
   I.signinIdam(testConfig.TestJudgeUserName, testConfig.TestJudgePassword);
+  I.wait(2);
   I.searchCase(scenarioSolRef, searchCaseType);
   I.contestedNextStep('Give Allocation Directions');
   await TabsPage.validateTabs(journeyType);
@@ -60,6 +61,7 @@ Scenario('Verify Contested HWF Payment', async (I, TabsPage) => {
   await getContestedScenarioState('Application Drafted', scenarioSolRef);
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
+  I.wait(2);
   I.searchCase(scenarioSolRef, searchCaseType);
   I.contestedNextStep('Case Submission|HWF');
   await TabsPage.validateTabs(journeyType);
@@ -72,7 +74,7 @@ Scenario('Verify Contestd Manual Payment', async (I, TabsPage) => {
   await getContestedScenarioState('Application Drafted', scenarioSolref);
 
   I.signinIdam(testConfig.TestCaseWorkerUserName, testConfig.TestCaseWorkerPassword);
-
+  I.wait(2);
   I.searchCase(scenarioSolref, searchCaseType);
   I.consentedNextStep('Manual Payment');
   I.waitForPage('.EventLogTable h2', 'History');

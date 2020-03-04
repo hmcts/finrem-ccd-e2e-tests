@@ -13,6 +13,7 @@ Scenario('Verify Contestd E2E Path Judge Draft Order', async (I) => {
   await getContestedScenarioState('Application Drafted', scenarioSolref);
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
+  I.wait(2);
   await I.searchCase(scenarioSolref, searchCaseType);
 
   asCaseWorker(I);
@@ -51,6 +52,7 @@ Scenario('Verify Contested E2E Path Solicitor Draft Order', async (I) => {
   await getContestedScenarioState('Application Drafted', scenarioSolref);
 
   I.signinIdam(testConfig.TestSolicitorUserName, testConfig.TestSolicitorPassword);
+  I.wait(2);
   await I.searchCase(scenarioSolref, searchCaseType);
 
   asCaseWorker(I);
