@@ -28,15 +28,9 @@ async function login(username,password) {
     });
 
     let _csrf = '';
+
     if (csrfRes.headers['set-cookie'][0]) {
       _csrf = csrfRes.headers['set-cookie'][0].replace('XSRF-TOKEN=', '')
-        .split(';')[0];
-
-    }
-
-    let ARRAffinityVal = '';
-    if (csrfRes.headers['set-cookie'][1]) {
-      ARRAffinityVal = csrfRes.headers['set-cookie'][1].replace('ARRAffinity=', '')
         .split(';')[0];
 
     }
@@ -45,8 +39,7 @@ async function login(username,password) {
       'Content-Type': 'application/x-www-form-urlencoded',
       'Sec-Fetch-User': '?1',
       'Sec-Fetch-Site': 'same-site',
-      'Sec-Fetch-Mode': 'navigate',
-      'ARRAffinity': ARRAffinityVal
+      'Sec-Fetch-Mode': 'navigate'
     };
 
     const data = {
@@ -65,11 +58,8 @@ async function login(username,password) {
       data: querystring.stringify(data),
       config: { headers: headers },
       withCredentials: true
-    }).catch(function (error){
-      if (error.request) {
-        redirectPath= error.request.path;
-      }
     });
+    redirectPath = loginres.config.url;
   }
   catch(err){
     console.log('Login Error for user : '+ username+ 'error code is' +err);
@@ -80,7 +70,6 @@ async function login(username,password) {
 
   const res = await http({'method':'get',
     'url': 'https://gateway-ccd.aat.platform.hmcts.net/oauth2?code=' + code + '&redirect_uri=www-ccd.aat.platform.hmcts.net/oauth2redirect'
-
   });
 }
 
