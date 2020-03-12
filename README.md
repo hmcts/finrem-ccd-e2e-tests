@@ -28,6 +28,8 @@ $ yarn consentedtest-e2e
 $ yarn contestedtest-e2e
  ```
 
+(If you want to view the tests as they run in Chromium then remove the “--headless“ flag from codecept.e2e.test.conf.js)
+
 ## Verification
 
 ### Eslint is included and will verify the config is properly formatted:
