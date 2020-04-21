@@ -29,10 +29,14 @@ async function login(username,password) {
 
     let _csrf = '';
 
-    if (csrfRes.headers['set-cookie'][0]) {
+    if(csrfRes.headers['set-cookie'][0].split('=')[0] === 'XSRF-TOKEN')
+    {
       _csrf = csrfRes.headers['set-cookie'][0].replace('XSRF-TOKEN=', '')
         .split(';')[0];
-
+    }else if(csrfRes.headers['set-cookie'][1].split('=')[0] === 'XSRF-TOKEN')
+    {
+      _csrf = csrfRes.headers['set-cookie'][1].replace('XSRF-TOKEN=', '')
+        .split(';')[0];
     }
 
     const headers = {
