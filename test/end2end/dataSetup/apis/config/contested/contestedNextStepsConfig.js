@@ -28,7 +28,7 @@ let caseSubmissionPBA = {
   'authorisation2b': 'Senior',
   'authorisation3': '1982-03-13',
   'helpWithFeesQuestion': 'No',
-  'PBANumber': 'PBA0066906',
+  'PBANumber': 'PBA0088063',
   'PBAreference': 'Pba Reference for test',
   'amountToPay': '25500',
   'orderSummary': {
@@ -57,7 +57,7 @@ const contestedNextSteps = {
     },
     'Case Submission|PBA': {
       id: 'FR_applicationPaymentSubmission',
-      data: caseSubmissionPBA 
+      data: caseSubmissionPBA
     },
     'Submit Uploaded Case Files':{
       id: 'FR_submitUploadedCaseFiles',
@@ -86,36 +86,36 @@ const contestedNextSteps = {
     'Issue Application': {
       id: 'FR_issueApplication',
       data: {
-        'issueDate': '2019-10-10'   
+        'issueDate': '2019-10-10'
       }
     },
     'Allocate to Judge': {
       id: 'FR_allocateToJudge',
-      data :{} 
+      data :{}
     },
     'Progress To Listing': {
       id: 'FR_progressToSchedulingAndListing',
-      data:{} 
+      data:{}
     },
     'Consent Order Payment': {
       id: 'FR_uploadConsentedOrderWithPayment',
-      data:{} 
+      data:{}
     },
     'Consent Order (No Payment)': {
       id: 'FR_uploadConsentedOrderNoPayment',
-      data:{} 
+      data:{}
     },
     'HWF Application Accepted': {
       id: 'FR_HWFDecisionMade',
-      data: {} 
+      data: {}
     },
     'Fee Account Debited': {
       id: 'FR_HWFFeeAccountDebited',
       data: {}
-    }, 
+    },
     'Awaiting Payment Response': {
       id: 'FR_awaitingPaymentResponseFromHWF',
-      data:{} 
+      data:{}
     },
     'List for Hearing':{
       id: 'FR_addSchedulingListingInfo',
@@ -126,7 +126,7 @@ const contestedNextSteps = {
         'regionListSL': 'london',
         'londonFRCListSL': 'cfc',
         'cfcCourtListSL': 'FR_s_CFCList_16'
-      } 
+      }
     },
     'Consent Order Payment':{
       id : '',
@@ -172,7 +172,7 @@ const contestedNextSteps = {
       id: 'FR_solicitorToDraftOrder',
       data: {
         attendingCourtWithAssistance: 'Test auto setup attendingCourtWithAssistance',
-        attendingCourtWithArrangement: 'Test auto setup attendingCourtWithArrangement' 
+        attendingCourtWithArrangement: 'Test auto setup attendingCourtWithArrangement'
       }
     },
     'Judge To Draft Order': {

@@ -28,7 +28,7 @@ let caseSubmissionPBA = {
   'authorisation2b': 'Senior',
   'authorisation3': '1982-03-13',
   'helpWithFeesQuestion': 'No',
-  'PBANumber': 'PBA0066906',
+  'PBANumber': 'PBA0088063',
   'PBAreference': 'Pba Reference for test',
   'amountToPay': '5000',
   'orderSummary': {
@@ -57,7 +57,7 @@ const consentedNextSteps = {
     },
     'Case Submission|PBA': {
       id: '',
-      data: caseSubmissionPBA 
+      data: caseSubmissionPBA
     },
     'Respond To Order': {
       id: '',
@@ -79,7 +79,7 @@ const consentedNextSteps = {
         ]
       }
     }
-    
+
   },
   caseWorker : {
     'Awaiting Payment Response': {
@@ -124,7 +124,7 @@ const consentedNextSteps = {
     'Upload Consent Order':{
       id:'',
       data: {
-        uploadConsentOrderDocuments:[] 
+        uploadConsentOrderDocuments:[]
       }
     },
     'Amend Final Order':{
@@ -137,7 +137,7 @@ const consentedNextSteps = {
     'General Order': {
       id: '',
       data: {
-        'generalOrderCollection':[] 
+        'generalOrderCollection':[]
       }
     },
     'Application Not Approved': {
@@ -176,7 +176,7 @@ const consentedNextSteps = {
           'document_binary_url': 'http://dm-store-aat.service.core-compute-aat.internal/documents/67e6986f-36e8-4e4d-9267-eefbb339604d/binary'
         }
       }
-    }, 
+    },
     'Approve Application': {
       id: '',
       data: {
@@ -187,7 +187,7 @@ const consentedNextSteps = {
         'orderDirectionDate': '2019-10-10',
         'orderDirectionAddComments': 'Approved'
       }
-    } 
+    }
   }
 };
 

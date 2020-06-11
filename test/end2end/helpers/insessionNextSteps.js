@@ -148,7 +148,7 @@ function caseSubmission(paymentType, I) {
   }
   else {
     I.waitForPageWithText('Amount to pay');
-    I.enterText('Enter your account number', 'PBA0066906');
+    I.enterText('Enter your account number', 'PBA0088063');
 
     I.enterText('Enter your reference', 'Test PBA Account');
     I.continueNext();
