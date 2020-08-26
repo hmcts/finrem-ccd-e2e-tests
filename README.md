@@ -1,5 +1,5 @@
 
-# Financial Remedy CCD End2End Journey Tests --Archived 
+# Financial Remedy CCD End2End Journey Tests --can be Archived 
 Not in use as we integrated the tests in CCD definition project itself.
 
 ## Purpose
